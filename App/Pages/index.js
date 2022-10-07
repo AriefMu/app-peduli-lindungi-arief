@@ -1,4 +1,4 @@
-//import HomeScreen from './HomeScreen';
+import HomeScreen from './HomeScreen';
 import SplashScreen from './SplashScreen';
 import LoginScreen from './LoginScreen';
 // import RegisterScreen from './RegisterScreen';
@@ -6,7 +6,7 @@ import LoginScreen from './LoginScreen';
 // import RegisterErrorScreen from './RegisterScreen/RegisterErrorScreen'
 
 export {
-    // HomeScreen, 
+    HomeScreen, 
     SplashScreen,
     LoginScreen
     // RegisterScreen,

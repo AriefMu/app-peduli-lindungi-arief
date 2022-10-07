@@ -15,7 +15,9 @@ export const onLoadFont = () =>{
         'Roboto-Light' : require('./fonts/Roboto-Light.ttf'),
         'Roboto-Italic' : require('./fonts/Roboto-Light.ttf'),
         'Roboto-Bold':require('./fonts/Roboto-Bold.ttf'),
-        'Poppins-Bold':require('./fonts/Poppins-Bold.ttf')
+        'Poppins-Bold':require('./fonts/Poppins-Bold.ttf'),
+        'Poppins-Medium':require('./fonts/Poppins-Medium.ttf'),
+        'Poppins-Light':require('./fonts/Poppins-Light.ttf')
     });
     return loaded
 }

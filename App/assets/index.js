@@ -6,7 +6,9 @@ import IconKpcpen from './img/logo_kpcpen.png';
 import IconTop from './img/logo-top.png';
 import IconMail from './img/Icon-mail.png';
 import IconLock from './img/Icon-lock.png';
-// import IconGmail from './img/gmail.png';
+import Iconhqr from './img/ic_hand_qr.jpg';
+import IconArw from './img/arrow-down.png';
+import IconSc from './img/logo-scan.png';
 // import IconFacebook from './img/facebook.png';
 // import IconTwitter from './img/twitter.png';
 // import AlertSuccess from './img/alert-success.png';
@@ -20,7 +22,10 @@ export {
     IconKpcpen,
     IconTop,
     IconMail,
-    IconLock
+    IconLock,
+    Iconhqr,
+    IconArw,
+    IconSc
     // IconGmail,
     // IconFacebook,
     // IconTwitter,

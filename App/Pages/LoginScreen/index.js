@@ -48,7 +48,7 @@ export default LoginScreen =  ({navigation}) => {
 
                 </View>
 
-                <PrimaryButton customeStyle={styles.btnLoginStyle} title="Login"/>
+                <PrimaryButton onPress={()=>navigation.navigate('HomeScreen')} customeStyle={styles.btnLoginStyle}  title="Login"/>
 
                 <View style={styles.viewbt}>
       <View>
