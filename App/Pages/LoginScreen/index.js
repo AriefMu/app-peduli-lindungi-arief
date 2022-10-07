@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { LinearGradient } from 'expo-linear-gradient';
 import {
     View,
     Text, 
@@ -11,9 +10,13 @@ import {
     TouchableOpacity
 } from 'react-native';
 import {
-    IconGmail,
-    IconFacebook,
-    IconTwitter
+    IconKemen,
+    IconKomin,
+    IconKpcpen,
+    IconBumn,
+    IconTop,
+    IconMail,
+    IconLock
 } from '../../assets';
 import {
     PrimaryButton
@@ -23,44 +26,43 @@ import {
 export default LoginScreen =  ({navigation}) => {
 
     return (
-        <SafeAreaView style={{ flex:1 }}>
-            <LinearGradient
-                colors={['#131B63', '#481162']}
-                style={styles.container}>
+        <SafeAreaView style={styles.container}>
+            
                 <StatusBar
-                    barStyle="light-content"
+                    barStyle="dark-content"
                     animated={true}
-                    backgroundColor="#131B63" />
-
-                <Text style={styles.HeaderText}>Login</Text>
-                <Text style={styles.BodyText}>Please login to your account</Text>
+                    backgroundColor='#FFFFFF' />
+                <View style={styles.logo}>
+                <Image source={IconTop}></Image>
+                </View>
+                <View style={styles.sectionStyle}>
+                <Image source={IconMail}style={styles.imageStyle}/>
                 <TextInput 
-                    style={[styles.inputStyle, {marginTop:80}]} 
-                    placeholder="Email"
+                    style={{flex: 1}}
+                    placeholder="youremail@domain.com" underlineColorAndroid="transparent"
                 />
-                <TextInput style={styles.inputStyle} placeholder="Password"/>
+                </View>
+                <View style={styles.sectionStyle}>
+                <Image source={IconLock}style={styles.imageStyle}/>
+                <TextInput  style={{flex: 1}}  placeholder="Password" underlineColorAndroid="transparent"/>
 
-                <PrimaryButton customeStyle={styles.btnLoginStyle} title="LOGIN"/>
-
-                <Text style={styles.smallText}>Forgot Password ?</Text>
-                <Text style={styles.smallTextCenter}>Or login with</Text>
-                <View style={styles.loginOption}>
-                    <Image source={IconGmail} style={styles.imgLoginIcon}/>
-                    <Image source={IconFacebook}  style={styles.imgLoginIcon}/>
-                    <Image source={IconTwitter}  style={styles.imgLoginIcon}/>
                 </View>
 
-                <View style={styles.footherText}>
-                    <Text style={styles.smallFootherText}>Don't have an account?</Text>
-                    <TouchableOpacity onPress={()=>navigation.navigate('RegisterScreen')}>
-                        <Text style={styles.smallFootherTextRight}>Create new now!</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.footherTextTwo}>
-                    <Text style={styles.smallFootherText}>By signing up, you are agree with our </Text>
-                    <Text style={styles.smallFootherTextRight}>Terms & Conditions</Text>
-                </View>
-            </LinearGradient>
+                <PrimaryButton customeStyle={styles.btnLoginStyle} title="Login"/>
+
+                <View style={styles.viewbt}>
+      <View>
+      <Text style={styles.text}>Bekerjasama Dengan :</Text>
+      </View>
+      <View style={styles.imgOption}>
+        <Image source={IconKpcpen}style={styles.kpc}></Image>
+        <Image source={IconKomin}style={styles.komin}></Image>
+        <Image source={IconKemen}style={styles.kemen}></Image>
+        <Image source={IconBumn}style={styles.bumn}></Image>
+
+      </View>
+      </View>
+            
         </SafeAreaView>
     );
 }
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding:15,
         alignContent:'center',
-        backgroundColor:'#131B63'
+        backgroundColor:"#FFFFFF"
     },
     HeaderText:{
         marginTop:10,
@@ -78,18 +80,44 @@ const styles = StyleSheet.create({
         fontFamily:'Roboto-Light',
         color:'white'
     },
+    text: {
+        fontFamily:'Lato-Regular',
+        fontSize:12,
+        marginTop:10
+        
+      },
+    viewbt:{
+        marginTop:50,
+        justifyContent:'center',
+        marginHorizontal:25,
+        marginBottom:10
+    },
     BodyText:{
         marginTop:10,
         fontSize:18,
         fontFamily:'Roboto-Bold',
         color:'white'
     },
+    imgOption:{
+        marginTop:10,
+        flexDirection:'row',
+        marginBottom:10,
+        alignItems:'center',
+        
+        
+    },
+    logo:{
+        marginTop:40,
+        justifyContent:'center',
+        alignItems:'center'
+    },
     inputStyle:{
+        flex: 1,
         height: 50,
         marginTop: 12,
         borderWidth: 1,
         paddingLeft:30,
-        borderRadius:50,
+        borderRadius:10,
         borderColor:'#695D91',
         fontSize:16,
         paddingTop:10,
@@ -97,8 +125,28 @@ const styles = StyleSheet.create({
         backgroundColor:'#695D91'
     },
     btnLoginStyle:{
-        marginTop:40,
+        marginTop:20,
+        fontFamily:'Poppins-Bold',fontSize:15
     },
+    sectionStyle: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        borderWidth: 1,
+        borderColor: '#006175',
+        height: 50,
+        borderRadius: 10,
+        margin: 10,
+      },
+      imageStyle: {
+        padding: 10,
+        margin: 10,
+        height: 25,
+        width: 25,
+        resizeMode: 'stretch',
+        alignItems: 'center',
+      },
     smallText:{
         fontFamily:'Roboto-Light',
         fontSize:14,
@@ -141,5 +189,24 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'center',
         marginTop:20
-    }
+    },
+    kpc:{
+        width:100,
+        height:35,
+        marginEnd:10
+      },
+      komin:{
+        width:39,
+        height:43,
+        marginEnd:10
+      },
+      kemen:{
+        width:78,
+        height:41,
+        marginEnd:10
+      },
+      bumn:{
+        width:77,
+        height:36,
+        marginEnd:10}
 });
