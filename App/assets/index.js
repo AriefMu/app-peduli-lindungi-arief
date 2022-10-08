@@ -11,6 +11,14 @@ import IconArw from './img/arrow-down.png';
 import IconSc from './img/logo-scan.png';
 import IconUser from './img/logo-user.png';
 import IconNoti from './img/logo-noti.png';
+import IconTrav from './img/ic_travel_regulation.jpg';
+import IconVac from './img/ic_vaccine_and_immuniazation.jpg';
+import IconTele from './img/ic_telemedicine.jpg';
+import IconStac from './img/ic_statistic_covid.jpg';
+import IconEhc from './img/ic_ehac.jpg';
+import IconFac from './img/ic_healthcare_facility.jpg';
+import IconHos from './img/ic_find_hospital.jpg';
+import IconRes from './img/ic_covid_test_result.jpg';
 // import IconFacebook from './img/facebook.png';
 // import IconTwitter from './img/twitter.png';
 // import AlertSuccess from './img/alert-success.png';
@@ -29,10 +37,13 @@ export {
     IconArw,
     IconSc,
     IconUser,
-    IconNoti
-    // IconGmail,
-    // IconFacebook,
-    // IconTwitter,
-    // AlertSuccess,
-    // AlertError
+    IconNoti,
+    IconTrav,
+    IconEhc,
+    IconFac,
+    IconHos,
+    IconRes,
+    IconStac,
+    IconTele,
+    IconVac
 };

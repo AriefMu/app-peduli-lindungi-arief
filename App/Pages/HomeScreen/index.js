@@ -3,25 +3,25 @@ import {View,
   Text, 
   SafeAreaView, 
   StyleSheet,
-  TextInput , 
   StatusBar, 
   Image,
-  Button,
-  Pressable,
-  TouchableOpacity} from 'react-native';
+  TouchableOpacity,
+ScrollView} from 'react-native';
+import { FlatList } from 'react-native-web';
   import {
-    IconKemen,
-    IconKomin,
-    IconKpcpen,
-    IconBumn,
-    IconTop,
-    IconMail,
-    IconLock,
     Iconhqr,
     IconArw,
     IconSc,
     IconNoti,
-    IconUser
+    IconUser,
+    IconTrav,
+    IconEhc,
+    IconFac,
+    IconHos,
+    IconRes,
+    IconStac,
+    IconTele,
+    IconVac
 } from '../../assets'
 
 const onPress=()=>{
@@ -34,7 +34,7 @@ const CekButton=()=>{
     <View style={{  alignItems:'center',
     justifyContent:'center',
     flexDirection:'row',
-    marginStart:50,
+   
     marginTop:8,
     width:130,
     height:40,
@@ -49,12 +49,14 @@ const CekButton=()=>{
 }  
   return (
     <SafeAreaView style={styles.container}>
-            
+      <ScrollView removeClippedSubviews nestedScrollEnabled contentContainerStyle={{ flexGrow: 1 }}>
+        
       <StatusBar
         barStyle="dark-content"
         animated={true}
         backgroundColor='#FFFFFF' />
-        <SafeAreaView style={styles.container1}>
+        
+        <View style={styles.container1}>
           <View style={styles.vup}>
             <Image source={IconUser} style={{width:22,height:22,alignSelf:'flex-start'}}/>
             <Text style={{fontFamily:'Poppins-SemiBold',fontSize:16,marginStart:10,alignSelf:'flex-start'}}>Hi, </Text>
@@ -78,17 +80,121 @@ const CekButton=()=>{
           </TouchableOpacity>
           </View>
         </View>
-        </SafeAreaView>
+        </View>
         <View style={{marginVertical:15,width:'100%',height:15,backgroundColor:'#DFDFDF'}}>
 
         </View>
         
+          <View style={{flex:1}}>
+          
+          <View style={styles.btsy}>
+          <TouchableOpacity onPress={onPress}>
+          <View style={{alignItems:'center'}}>
+          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#FFBF43',borderRadius:15,marginBottom:10}}>
+          <Image source={IconVac} style={{width:73,height:74,borderRadius:15}}></Image>
+          </View>
+          
+          <Text style={styles.textk}>Vaccine And</Text>
+          <Text style={styles.textk}>Immunization</Text>
+          
+          </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={onPress}>
+          <View style={{alignItems:'center',marginTop:30}}>
+          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#1E9E61',borderRadius:15,marginBottom:10}}>
+          <Image source={IconTrav} style={{width:64,height:72,resizeMode:'stretch',borderRadius:15}}></Image>
+          </View>
+          <Text style={styles.textk}>Travel</Text>
+          <Text style={styles.textk}>Regulations</Text>
+          </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={onPress}>
+          <View style={{alignItems:'center',marginTop:30}}>
+          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#D7574C',borderRadius:15,marginBottom:10}}>  
+          <Image source={IconStac} style={{width:65,height:66,resizeMode:'stretch',borderRadius:15}}></Image>
+          </View>
+          <Text style={styles.textk}>Covid-19</Text>
+          <Text style={styles.textk}>Statistic</Text>
+          </View>
+          </TouchableOpacity>
+          </View>
+          <View style={styles.btsy1}>
+          <TouchableOpacity onPress={onPress}>
+          <View style={{alignItems:'center'}}>
+          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#D34539',borderRadius:15,marginBottom:10}}>  
+          <Image source={IconRes} style={{width:72,height:71,resizeMode:'stretch',borderRadius:15}}></Image>
+          </View>
+          <Text style={styles.textk}>Covid-19 Test</Text>
+          <Text style={styles.textk}>Result</Text>
+          </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={onPress}>
+          <View style={{alignItems:'center',marginTop:30}}>
+          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#FFC557',borderRadius:15,marginBottom:10}}>  
+          <Image source={IconTele} style={{width:62,height:62,resizeMode:'stretch',borderRadius:15}}></Image>
+          </View>
+          <Text style={styles.textk}>Telemedicine</Text>
+          </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={onPress}>
+          <View style={{alignItems:'center',marginTop:50}}>
+          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#FFC557',borderRadius:15,marginBottom:10}}>  
+          <Image source={IconHos} style={{width:69,height:69,resizeMode:'stretch',borderRadius:15}}></Image>
+          </View>
+          <Text style={styles.textk}>Find Hospital</Text>
+          <Text style={styles.textk}>Bed</Text>
+          </View>
+          </TouchableOpacity>
+          </View>
+          
+          <View style={styles.btsy2}>
+          <TouchableOpacity onPress={onPress}>
+          <View style={{alignItems:'center'}}>
+          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#1E9E61',borderRadius:15,marginBottom:10}}>  
+          <Image source={IconEhc} style={{width:68,height:69,resizeMode:'stretch',borderRadius:15}}></Image>
+          </View>
+          <Text style={styles.textk}>EHAC</Text>
+          </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={onPress}>
+          <View style={{alignItems:'center',marginTop:50}}>
+          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#1E9E61',borderRadius:15,marginBottom:10}}>  
+          <Image source={IconFac} style={{width:68,height:68,resizeMode:'stretch',borderRadius:15}}></Image>
+          </View>
+          <Text style={styles.textk}>Healthcare</Text>
+          <Text style={styles.textk}>Facility</Text>
+          </View>
+          </TouchableOpacity>
+          </View>
+          </View>
+        
+          </ScrollView>
         </SafeAreaView >
         
     
   );
 };
 const styles = StyleSheet.create({
+  btsy:{
+    
+    margin:15,
+    marginStart:25,
+    position:'absolute'
+    
+  },
+  btsy1:{
+    margin:15,
+   
+    alignSelf:'center',
+   position:'absolute'
+   ,alignContent:'stretch'
+  },
+  btsy2:{
+    marginEnd:25,
+    margin:15,
+    position:'absolute',
+    right:0
+  },
   container:{
       flex: 1,
       
@@ -141,6 +247,12 @@ const styles = StyleSheet.create({
   vtext:{
     margin:20,
   },
+  textk: {
+    fontFamily:'Poppins-Medium',
+    fontSize:12
+
+    
+  },
   text: {
       fontFamily:'Poppins-Medium',
       fontSize:18,
@@ -179,20 +291,10 @@ const styles = StyleSheet.create({
       marginTop:20,
       fontFamily:'Poppins-Bold',fontSize:15
   },
-  sectionStyle: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#fff',
-      borderWidth: 1,
-      borderColor: '#006175',
-      height: 50,
-      borderRadius: 10,
-      margin: 10,
-    },
+  
     imageStyle: {
-      marginTop:21.5,
-      marginStart:23,
+      marginTop:15,
+      
       height: 80,
       width: 90,
       resizeMode:'stretch'
@@ -212,35 +314,6 @@ const styles = StyleSheet.create({
   },
   imgLoginIcon:{
     margin:10
-  },
-  footherText:{
-      flexDirection:'row',
-      justifyContent:'center',
-      marginTop:50
-  },
-  smallFootherText:{
-      fontFamily:'Roboto-Light',
-      fontSize:12,
-      color:'white',
-  },
-  
-  kpc:{
-      width:100,
-      height:35,
-      marginEnd:10
-    },
-    komin:{
-      width:39,
-      height:43,
-      marginEnd:10
-    },
-    kemen:{
-      width:78,
-      height:41,
-      marginEnd:10
-    },
-    bumn:{
-      width:77,
-      height:36,
-      marginEnd:10}
+  }
+
 });
