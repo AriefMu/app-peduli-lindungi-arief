@@ -19,12 +19,34 @@ import {View,
     IconLock,
     Iconhqr,
     IconArw,
-    IconSc
-} from '../../assets';
+    IconSc,
+    IconNoti,
+    IconUser
+} from '../../assets'
 
+const onPress=()=>{
+  alert('asdf')
+}
 
 export default HomeScreen = () => {
-  
+const CekButton=()=>{
+  return(
+    <View style={{  alignItems:'center',
+    justifyContent:'center',
+    flexDirection:'row',
+    marginStart:50,
+    marginTop:8,
+    width:130,
+    height:40,
+    borderRadius:30,
+    backgroundColor:'#EAF5F9'}}>
+            
+            <Image source={IconSc} style={{marginHorizontal:10,width:21,height:20}}/>
+            <Text style={{fontFamily:'Poppins-Bold',color:'#259AD5'}}>Check-In</Text>
+            
+          </View>
+  )
+}  
   return (
     <SafeAreaView style={styles.container}>
             
@@ -32,6 +54,13 @@ export default HomeScreen = () => {
         barStyle="dark-content"
         animated={true}
         backgroundColor='#FFFFFF' />
+        <SafeAreaView style={styles.container1}>
+          <View style={styles.vup}>
+            <Image source={IconUser} style={{width:22,height:22,alignSelf:'flex-start'}}/>
+            <Text style={{fontFamily:'Poppins-SemiBold',fontSize:16,marginStart:10,alignSelf:'flex-start'}}>Hi, </Text>
+            <Text style={{fontFamily:'Poppins-SemiBold',fontSize:16,textDecorationLine:'underline',textDecorationColor:'#000',alignSelf:'flex-start'}}>Arief Muhammad</Text>
+            <Image source={IconNoti} style={{width:22,height:25,alignSelf:'flex-start',position:'absolute',right:0}}/>
+          </View>
         <View style={styles.vall}>
           <View style={styles.vhal}>
           <View style={styles.vtext}>
@@ -42,50 +71,53 @@ export default HomeScreen = () => {
           <Image source={Iconhqr} style={styles.imageStyle}></Image>
           </View>
           <View style={styles.vhal2}>
-            <Image source={IconArw} style={{margin:10,width:20,height:20}}></Image>
+          <Image source={IconArw} style={{margin:10,width:20,height:20}}></Image>
           <Text style={styles.text2}>Check-In-Preference</Text>
-          <TouchableOpacity onPressOut={alert('You Tapped')}>
-          <View style={styles.vbutton}>
-            
-            <Image source={IconSc} style={{marginHorizontal:10,width:21,height:20}}/>
-            <Text style={{fontFamily:'Poppins-Bold',color:'#259AD5'}}>Check-In</Text>
-            
-          </View>
+          <TouchableOpacity onPress={onPress}>
+          <CekButton/>
           </TouchableOpacity>
           </View>
         </View>
-    </SafeAreaView>
+        </SafeAreaView>
+        <View style={{marginVertical:15,width:'100%',height:15,backgroundColor:'#DFDFDF'}}>
+
+        </View>
+        
+        </SafeAreaView >
+        
+    
   );
 };
 const styles = StyleSheet.create({
   container:{
       flex: 1,
-      padding:15,
+      
       alignContent:'center',
       backgroundColor:"#FFFFFF"
   },
+  vup:{
+    flexDirection:'row',
+    alignItems:'center'
+  },
+  container1:{
+   height:230,
+   padding:15,
+    alignContent:'center',
+    backgroundColor:"#FFFFFF"
+},
   vhal:{
     flexDirection:'row',
-    flex:0.65,
+    height:'65%',
+   
     backgroundColor:'#239BD8',
     borderTopStartRadius:15,
     borderTopEndRadius:15
 
   },
-  vbutton:{
-    alignItems:'center',
-    justifyContent:'center',
-    flexDirection:'row',
-    marginStart:50,
-    marginTop:8,
-    width:130,
-    height:40,
-    borderRadius:30,
-    backgroundColor:'#EAF5F9',
-  },
+  
   vhal2:{
     flexDirection:'row',
-    flex:0.35,
+    height:'35%',
     backgroundColor:'#FFFFFF',
     borderBottomStartRadius:15,
     borderBottomEndRadius:15
@@ -97,20 +129,15 @@ const styles = StyleSheet.create({
 
   },
   vall:{
-    
+    marginTop:20,
     backgroundColor:'white',
     borderColor:'grey',
     borderRadius:15,
     borderWidth:1,
     width:'100%',
-    height:'25%'
+    height:150
   },
-  HeaderText:{
-      marginTop:10,
-      fontSize:73,
-      fontFamily:'Roboto-Light',
-      color:'white'
-  },
+  
   vtext:{
     margin:20,
   },
@@ -130,26 +157,6 @@ const styles = StyleSheet.create({
 
       
     },
-  viewbt:{
-      marginTop:50,
-      justifyContent:'center',
-      marginHorizontal:25,
-      marginBottom:10
-  },
-  BodyText:{
-      marginTop:10,
-      fontSize:18,
-      fontFamily:'Roboto-Bold',
-      color:'white'
-  },
-  imgOption:{
-      marginTop:10,
-      flexDirection:'row',
-      marginBottom:10,
-      alignItems:'center',
-      
-      
-  },
   logo:{
       marginTop:40,
       justifyContent:'center',

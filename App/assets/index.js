@@ -9,6 +9,8 @@ import IconLock from './img/Icon-lock.png';
 import Iconhqr from './img/ic_hand_qr.jpg';
 import IconArw from './img/arrow-down.png';
 import IconSc from './img/logo-scan.png';
+import IconUser from './img/logo-user.png';
+import IconNoti from './img/logo-noti.png';
 // import IconFacebook from './img/facebook.png';
 // import IconTwitter from './img/twitter.png';
 // import AlertSuccess from './img/alert-success.png';
@@ -25,7 +27,9 @@ export {
     IconLock,
     Iconhqr,
     IconArw,
-    IconSc
+    IconSc,
+    IconUser,
+    IconNoti
     // IconGmail,
     // IconFacebook,
     // IconTwitter,
