@@ -19,6 +19,9 @@ export const onLoadFont = () =>{
         'Poppins-Medium':require('./fonts/Poppins-Medium.ttf'),
         'Poppins-Light':require('./fonts/Poppins-Light.ttf'),
         'Poppins-SemiBold':require('./fonts/Poppins-SemiBold.ttf'),
+        'Inter-SemiBold':require('./fonts/Inter-SemiBold.ttf'),
+        'Inter-Bold':require('./fonts/Inter-Bold.ttf'),
+        'Inter-Regular':require('./fonts/Inter-Regular.ttf')
     });
-    return loaded
+    return loaded 
 }

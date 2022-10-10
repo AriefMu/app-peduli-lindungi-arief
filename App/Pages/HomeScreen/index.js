@@ -28,7 +28,7 @@ const onPress=()=>{
   alert('asdf')
 }
 
-export default HomeScreen = () => {
+export default HomeScreen = ({navigation}) => {
 const CekButton=()=>{
   return(
     <View style={{  alignItems:'center',
@@ -88,7 +88,7 @@ const CekButton=()=>{
           <View style={{flex:1}}>
           
           <View style={styles.btsy}>
-          <TouchableOpacity onPress={onPress}>
+          <TouchableOpacity onPress={()=>navigation.navigate('ImmunizationScreen')}>
           <View style={{alignItems:'center'}}>
           <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#FFBF43',borderRadius:15,marginBottom:10}}>
           <Image source={IconVac} style={{width:73,height:74,borderRadius:15}}></Image>
@@ -119,7 +119,7 @@ const CekButton=()=>{
           </TouchableOpacity>
           </View>
           <View style={styles.btsy1}>
-          <TouchableOpacity onPress={onPress}>
+          <TouchableOpacity onPress={()=>navigation.navigate('CovidTestScreen')}>
           <View style={{alignItems:'center'}}>
           <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#D34539',borderRadius:15,marginBottom:10}}>  
           <Image source={IconRes} style={{width:72,height:71,resizeMode:'stretch',borderRadius:15}}></Image>
@@ -148,7 +148,7 @@ const CekButton=()=>{
           </View>
           
           <View style={styles.btsy2}>
-          <TouchableOpacity onPress={onPress}>
+          <TouchableOpacity onPress={()=>navigation.navigate('EhacScreen')}>
           <View style={{alignItems:'center'}}>
           <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#1E9E61',borderRadius:15,marginBottom:10}}>  
           <Image source={IconEhc} style={{width:68,height:69,resizeMode:'stretch',borderRadius:15}}></Image>

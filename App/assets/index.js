@@ -19,6 +19,14 @@ import IconEhc from './img/ic_ehac.jpg';
 import IconFac from './img/ic_healthcare_facility.jpg';
 import IconHos from './img/ic_find_hospital.jpg';
 import IconRes from './img/ic_covid_test_result.jpg';
+import IconCov from './img/ic_covid.jpg';
+import IconCek from './img/ic_check_in.jpg';
+import IconChi from './img/ic_child.jpg';
+import IconBg from './img/bg_ehac.jpg';
+import IconCre from './img/ic_create_ehc.jpg';
+import IconMy from './img/ic_my_ehc.jpg';
+import IconEm from './img/ic_empty.jpg';
+
 // import IconFacebook from './img/facebook.png';
 // import IconTwitter from './img/twitter.png';
 // import AlertSuccess from './img/alert-success.png';
@@ -45,5 +53,12 @@ export {
     IconRes,
     IconStac,
     IconTele,
-    IconVac
+    IconVac,
+    IconCov,
+    IconCek,
+    IconChi,
+    IconBg,
+    IconCre,
+    IconMy,
+    IconEm
 };
