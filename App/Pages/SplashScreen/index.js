@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
   },
   imgOption:{
     marginTop:10,
+    justifyContent:'center',
     flexDirection:'row',
     marginBottom:10,
     alignItems:'center',
@@ -52,8 +53,8 @@ const styles = StyleSheet.create({
     
 },
 viewbt:{
-    justifyContent:'center',
-    marginHorizontal:40,
+    alignSelf:'center',
+    
     marginBottom:40
 },
   kpc:{
@@ -82,6 +83,7 @@ viewbt:{
     justifyContent: 'center',
   },
   text: {
+    
     fontFamily:'Lato-Regular',
     fontSize:12,
     marginTop:10

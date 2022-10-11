@@ -5,7 +5,7 @@ import {View,
   StyleSheet,
   StatusBar, 
   Image,
-  TouchableOpacity,
+  TouchableOpacity,Dimensions, Platform, PixelRatio,
 ScrollView} from 'react-native';
 import { FlatList } from 'react-native-web';
   import {
@@ -22,7 +22,27 @@ import { FlatList } from 'react-native-web';
     IconStac,
     IconTele,
     IconVac
-} from '../../assets'
+} from '../../assets';
+import { AntDesign } from '@expo/vector-icons';
+import { EvilIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+const {
+  width: SCREEN_WIDTH,
+  height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 430;
+
+export function normalize(size) {
+  const newSize = size * scale 
+  if (Platform.OS === 'android') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+  }
+}
 
 const onPress=()=>{
   alert('asdf')
@@ -34,14 +54,19 @@ const CekButton=()=>{
     <View style={{  alignItems:'center',
     justifyContent:'center',
     flexDirection:'row',
-   
-    marginTop:8,
+   position:'absolute',
+   marginTop:5,
+marginRight:10,
+   right:0,
+    top:0,
+    bottom:0,
     width:130,
     height:40,
     borderRadius:30,
-    backgroundColor:'#EAF5F9'}}>
+    backgroundColor:'#EAF5F9',
+    }}>
             
-            <Image source={IconSc} style={{marginHorizontal:10,width:21,height:20}}/>
+            <MaterialCommunityIcons name="flip-vertical" size={22} color="#239BD88A" style={{margin:10}}/>
             <Text style={{fontFamily:'Poppins-Bold',color:'#259AD5'}}>Check-In</Text>
             
           </View>
@@ -58,10 +83,10 @@ const CekButton=()=>{
         
         <View style={styles.container1}>
           <View style={styles.vup}>
-            <Image source={IconUser} style={{width:22,height:22,alignSelf:'flex-start'}}/>
-            <Text style={{fontFamily:'Poppins-SemiBold',fontSize:16,marginStart:10,alignSelf:'flex-start'}}>Hi, </Text>
-            <Text style={{fontFamily:'Poppins-SemiBold',fontSize:16,textDecorationLine:'underline',textDecorationColor:'#000',alignSelf:'flex-start'}}>Arief Muhammad</Text>
-            <Image source={IconNoti} style={{width:22,height:25,alignSelf:'flex-start',position:'absolute',right:0}}/>
+          <EvilIcons name="user" size={45} color="#adacac" />
+            <Text style={{fontFamily:'Poppins-SemiBold',fontSize:normalize(16),marginStart:10,alignSelf:'flex-start',alignSelf:'center'}}>Hi, </Text>
+            <Text style={{fontFamily:'Poppins-SemiBold',fontSize:normalize(16),textDecorationLine:'underline',textDecorationColor:'#000',alignSelf:'center'}}>Arief Muhammad</Text>
+            <MaterialIcons name="notifications-none" size={30} color="#adacac" style={{alignSelf:'flex-start',position:'absolute',right:0}}/>
           </View>
         <View style={styles.vall}>
           <View style={styles.vhal}>
@@ -75,7 +100,7 @@ const CekButton=()=>{
           <View style={styles.vhal2}>
           <Image source={IconArw} style={{margin:10,width:20,height:20}}></Image>
           <Text style={styles.text2}>Check-In-Preference</Text>
-          <TouchableOpacity onPress={onPress}>
+          <TouchableOpacity onPress={onPress} style={{position:'absolute',right:0}}>
           <CekButton/>
           </TouchableOpacity>
           </View>
@@ -90,8 +115,8 @@ const CekButton=()=>{
           <View style={styles.btsy}>
           <TouchableOpacity onPress={()=>navigation.navigate('ImmunizationScreen')}>
           <View style={{alignItems:'center'}}>
-          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#FFBF43',borderRadius:15,marginBottom:10}}>
-          <Image source={IconVac} style={{width:73,height:74,borderRadius:15}}></Image>
+          <View style={[styles.Img,{backgroundColor:'#FFBF43'}]}>
+          <Image source={IconVac} style={{width:normalize(73),height:normalize(74),borderRadius:15}}></Image>
           </View>
           
           <Text style={styles.textk}>Vaccine And</Text>
@@ -101,8 +126,8 @@ const CekButton=()=>{
           </TouchableOpacity>
           <TouchableOpacity onPress={onPress}>
           <View style={{alignItems:'center',marginTop:30}}>
-          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#1E9E61',borderRadius:15,marginBottom:10}}>
-          <Image source={IconTrav} style={{width:64,height:72,resizeMode:'stretch',borderRadius:15}}></Image>
+          <View style={[styles.Img,{backgroundColor:'#1E9E61'}]}>
+          <Image source={IconTrav} style={{width:normalize(64),height:normalize(72),resizeMode:'stretch',borderRadius:15}}></Image>
           </View>
           <Text style={styles.textk}>Travel</Text>
           <Text style={styles.textk}>Regulations</Text>
@@ -110,8 +135,8 @@ const CekButton=()=>{
           </TouchableOpacity>
           <TouchableOpacity onPress={onPress}>
           <View style={{alignItems:'center',marginTop:30}}>
-          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#D7574C',borderRadius:15,marginBottom:10}}>  
-          <Image source={IconStac} style={{width:65,height:66,resizeMode:'stretch',borderRadius:15}}></Image>
+          <View style={[styles.Img,{backgroundColor:'#D7574C'}]}>  
+          <Image source={IconStac} style={{width:normalize(65),height:normalize(66),resizeMode:'stretch',borderRadius:15}}></Image>
           </View>
           <Text style={styles.textk}>Covid-19</Text>
           <Text style={styles.textk}>Statistic</Text>
@@ -121,8 +146,8 @@ const CekButton=()=>{
           <View style={styles.btsy1}>
           <TouchableOpacity onPress={()=>navigation.navigate('CovidTestScreen')}>
           <View style={{alignItems:'center'}}>
-          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#D34539',borderRadius:15,marginBottom:10}}>  
-          <Image source={IconRes} style={{width:72,height:71,resizeMode:'stretch',borderRadius:15}}></Image>
+          <View style={[styles.Img,{backgroundColor:'#D34539'}]}>  
+          <Image source={IconRes} style={{width:normalize(72),height:normalize(71),resizeMode:'stretch',borderRadius:15}}></Image>
           </View>
           <Text style={styles.textk}>Covid-19 Test</Text>
           <Text style={styles.textk}>Result</Text>
@@ -130,16 +155,16 @@ const CekButton=()=>{
           </TouchableOpacity>
           <TouchableOpacity onPress={onPress}>
           <View style={{alignItems:'center',marginTop:30}}>
-          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#FFC557',borderRadius:15,marginBottom:10}}>  
-          <Image source={IconTele} style={{width:62,height:62,resizeMode:'stretch',borderRadius:15}}></Image>
+          <View style={[styles.Img,{backgroundColor:'#FFC557'}]}>  
+          <Image source={IconTele} style={{width:normalize(62),height:normalize(62),resizeMode:'stretch',borderRadius:15}}></Image>
           </View>
           <Text style={styles.textk}>Telemedicine</Text>
           </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={onPress}>
           <View style={{alignItems:'center',marginTop:50}}>
-          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#FFC557',borderRadius:15,marginBottom:10}}>  
-          <Image source={IconHos} style={{width:69,height:69,resizeMode:'stretch',borderRadius:15}}></Image>
+          <View style={[styles.Img,{backgroundColor:'#FFC557'}]}>  
+          <Image source={IconHos} style={{width:normalize(69),height:normalize(69),resizeMode:'stretch',borderRadius:15}}></Image>
           </View>
           <Text style={styles.textk}>Find Hospital</Text>
           <Text style={styles.textk}>Bed</Text>
@@ -150,16 +175,16 @@ const CekButton=()=>{
           <View style={styles.btsy2}>
           <TouchableOpacity onPress={()=>navigation.navigate('EhacScreen')}>
           <View style={{alignItems:'center'}}>
-          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#1E9E61',borderRadius:15,marginBottom:10}}>  
-          <Image source={IconEhc} style={{width:68,height:69,resizeMode:'stretch',borderRadius:15}}></Image>
+          <View style={[styles.Img,{backgroundColor:'#1E9E61'}]}>  
+          <Image source={IconEhc} style={{width:normalize(68),height:normalize(69),resizeMode:'stretch',borderRadius:15}}></Image>
           </View>
           <Text style={styles.textk}>EHAC</Text>
           </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={onPress}>
           <View style={{alignItems:'center',marginTop:50}}>
-          <View style={{justifyContent:'center',alignItems:'center',width:79,height:83,backgroundColor:'#1E9E61',borderRadius:15,marginBottom:10}}>  
-          <Image source={IconFac} style={{width:68,height:68,resizeMode:'stretch',borderRadius:15}}></Image>
+          <View style={[styles.Img,{backgroundColor:'#1E9E61'}]}>  
+          <Image source={IconFac} style={{width:normalize(68),height:(68),resizeMode:'stretch',borderRadius:15}}></Image>
           </View>
           <Text style={styles.textk}>Healthcare</Text>
           <Text style={styles.textk}>Facility</Text>
@@ -182,6 +207,14 @@ const styles = StyleSheet.create({
     position:'absolute'
     
   },
+  Img:{
+    justifyContent:'center',
+    alignItems:'center',
+    width:normalize(79),
+    height:normalize(83),
+    borderRadius:15,
+    marginBottom:10
+  },
   btsy1:{
     margin:15,
    
@@ -203,7 +236,10 @@ const styles = StyleSheet.create({
   },
   vup:{
     flexDirection:'row',
-    alignItems:'center'
+    
+   
+   
+
   },
   container1:{
    height:230,
@@ -222,16 +258,17 @@ const styles = StyleSheet.create({
   },
   
   vhal2:{
+    
     flexDirection:'row',
     height:'35%',
-    backgroundColor:'#FFFFFF',
-    borderBottomStartRadius:15,
-    borderBottomEndRadius:15
-
+    paddingVertical:5,    borderBottomStartRadius:15,
+    borderBottomEndRadius:15,
+    
   },
   text2:{
     fontFamily:'Poppins-Bold',
     marginTop:10,
+    fontSize:normalize(15)
 
   },
   vall:{
@@ -249,13 +286,13 @@ const styles = StyleSheet.create({
   },
   textk: {
     fontFamily:'Poppins-Medium',
-    fontSize:12
+    fontSize:normalize(12)
 
     
   },
   text: {
       fontFamily:'Poppins-Medium',
-      fontSize:18,
+      fontSize:normalize(18),
       
       color:'white'
 
@@ -263,7 +300,7 @@ const styles = StyleSheet.create({
     },
     smalltext: {
       fontFamily:'Poppins-Light',
-      fontSize:14,
+      fontSize:normalize(14),
       
       color:'white'
 
@@ -282,19 +319,21 @@ const styles = StyleSheet.create({
       paddingLeft:30,
       borderRadius:10,
       borderColor:'#695D91',
-      fontSize:16,
+      fontSize:normalize(16),
       paddingTop:10,
       paddingBottom:10,
       backgroundColor:'#695D91'
   },
   btnLoginStyle:{
       marginTop:20,
-      fontFamily:'Poppins-Bold',fontSize:15
+      fontFamily:'Poppins-Bold',fontSize:normalize(15)
   },
   
     imageStyle: {
       marginTop:15,
-      
+      position:'absolute',
+      right:0,
+      bottom:0,
       height: 80,
       width: 90,
       resizeMode:'stretch'
@@ -303,7 +342,7 @@ const styles = StyleSheet.create({
     },
   smallTextCenter:{
       fontFamily:'Roboto-Light',
-      fontSize:14,
+      fontSize:normalize(14),
       marginTop:50,
       color:'white',
       textAlign:'center'

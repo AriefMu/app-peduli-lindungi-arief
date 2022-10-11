@@ -7,7 +7,7 @@ import {
     TextInput , 
     StatusBar, 
     Image,
-    TouchableOpacity
+    TouchableOpacity,Dimensions, Platform, PixelRatio
 } from 'react-native';
 import {
     IconKemen,
@@ -26,7 +26,22 @@ import {
 } from '../../Componets';
 import { AntDesign } from '@expo/vector-icons';
 import Ionicons from '@expo/vector-icons/Ionicons';
-
+const {
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
+  } = Dimensions.get('window');
+  
+  // based on iphone 5s's scale
+  const scale = SCREEN_WIDTH / 430;
+  
+  export function normalize(size) {
+    const newSize = size * scale 
+    if (Platform.OS === 'android') {
+      return Math.round(PixelRatio.roundToNearestPixel(newSize))
+    } else {
+      return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+    }
+  }
 export default ImmunizationScreen = ({navigation}) =>{
 return(
     <SafeAreaView style={styles.container}>
@@ -45,7 +60,9 @@ return(
             </View>
             <View style={styles.TexCon}>
             <Text style={styles.TexHead}>COVID-19 Vaccine</Text>
-            <Text style={styles.Texdet}>See your vaccine certificate{"\n"}here</Text>
+            
+            
+            <Text style={styles.Texdet}>See your vaccine certificate{'\n'}here</Text>
             </View>
         </View>
         <View style={styles.Bin}>
@@ -54,7 +71,7 @@ return(
             </View>
             <View style={styles.TexCon}>
             <Text style={styles.TexHead}>Chech-In Verification</Text>
-            <Text style={styles.Texdet}>Covid-19 vaccine certificate verification in EU format</Text>
+            <Text style={styles.Texdet}>Covid-19 vaccine certificate{'\n'}verification in EU format</Text>
             </View>
         </View>
         <View style={styles.Bin}>
@@ -63,7 +80,7 @@ return(
             </View>
             <View style={styles.TexCon1}>
             <Text style={styles.TexHead}>Child Immunization</Text>
-            <Text style={styles.Texdet}>See your child's immunization record here</Text>
+            <Text style={styles.Texdet}>See your child's immunization{'\n'}record here</Text>
             </View>
         </View>
         </View> 
@@ -91,16 +108,20 @@ TexCon:{
     height:'100%',
     marginVertical:15,
     borderBottomWidth:1,
-    borderBottomColor:'#D2D2D2'
+    borderBottomColor:'#D2D2D2',
+    flexWrap:'wrap',
+    alignItems:'flex-start'
+
 },
 TexHead:{
     fontFamily:'Inter-Bold',
-    fontSize:17
+    fontSize: normalize(17)
 },
 Texdet:{
     fontFamily:'Inter-Regular',
     color:'#8A8A8A',
-    fontSize:17,
+    fontSize:normalize(17),
+    
     
 },
 Imgcon:{
@@ -116,15 +137,15 @@ borderRadius:15
 },
 Up:{
 fontFamily:'Inter-SemiBold',
-fontSize:18,
+fontSize:normalize(18),
 marginStart:15
 },
 Bin:{
     flex:1,
     flexDirection:'row',
     width:'100%',
-    marginBottom:20
-    
+    marginBottom:20,
+    alignItems:'flex-start'
 },
 Box:{
     marginTop:40,

@@ -51,7 +51,7 @@ export default LoginScreen =  ({navigation}) => {
                 <PrimaryButton onPress={()=>navigation.navigate('HomeScreen')} customeStyle={styles.btnLoginStyle}  title="Login"/>
 
                 <View style={styles.viewbt}>
-      <View>
+      <View style={{justifyContent:'flex-start'}}>
       <Text style={styles.text}>Bekerjasama Dengan :</Text>
       </View>
       <View style={styles.imgOption}>
@@ -81,15 +81,18 @@ const styles = StyleSheet.create({
         color:'white'
     },
     text: {
+        
         fontFamily:'Lato-Regular',
         fontSize:12,
         marginTop:10
         
       },
     viewbt:{
-        marginTop:50,
-        justifyContent:'center',
-        marginHorizontal:25,
+        justifyContent:'flex-start',
+        alignItems:'flex-start',
+        marginTop:100,
+        alignSelf:'center',
+        
         marginBottom:10
     },
     BodyText:{
@@ -101,8 +104,9 @@ const styles = StyleSheet.create({
     imgOption:{
         marginTop:10,
         flexDirection:'row',
+        justifyContent:'center',
         marginBottom:10,
-        alignItems:'center',
+        
         
         
     },

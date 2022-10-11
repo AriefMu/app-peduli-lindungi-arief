@@ -7,7 +7,7 @@ import {
     TextInput , 
     StatusBar, 
     Image,
-    TouchableOpacity
+    TouchableOpacity,Dimensions, Platform, PixelRatio
 } from 'react-native';
 import {
     IconKemen,
@@ -29,7 +29,22 @@ import {
 } from '../../Componets';
 import { AntDesign } from '@expo/vector-icons';
 import Ionicons from '@expo/vector-icons/Ionicons';
-
+const {
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
+  } = Dimensions.get('window');
+  
+  // based on iphone 5s's scale
+  const scale = SCREEN_WIDTH / 430;
+  
+  export function normalize(size) {
+    const newSize = size * scale 
+    if (Platform.OS === 'android') {
+      return Math.round(PixelRatio.roundToNearestPixel(newSize))
+    } else {
+      return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+    }
+  }
 export default EhacScreen = ({navigation}) =>{
 return(
     <SafeAreaView style={styles.container}>
@@ -97,12 +112,12 @@ TexCon:{
 },
 TexHead:{
     fontFamily:'Inter-Bold',
-    fontSize:18
+    fontSize:normalize(18)
 },
 Texdet:{
     fontFamily:'Inter-Regular',
     color:'#8A8A8A',
-    fontSize:18,
+    fontSize:normalize(18)
     
 },
 Imgcon:{
