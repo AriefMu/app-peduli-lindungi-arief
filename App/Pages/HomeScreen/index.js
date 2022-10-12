@@ -5,9 +5,9 @@ import {View,
   StyleSheet,
   StatusBar, 
   Image,
-  TouchableOpacity,Dimensions, Platform, PixelRatio,
+  TouchableOpacity,Dimensions, Platform, PixelRatio,Alert,
 ScrollView} from 'react-native';
-import { FlatList } from 'react-native-web';
+import Modal from "react-native-modal";
   import {
     Iconhqr,
     IconArw,
@@ -27,6 +27,8 @@ import { AntDesign } from '@expo/vector-icons';
 import { EvilIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import AwesomeAlert from 'react-native-awesome-alerts';
+
 const {
   width: SCREEN_WIDTH,
   height: SCREEN_HEIGHT,
@@ -34,7 +36,14 @@ const {
 
 // based on iphone 5s's scale
 const scale = SCREEN_WIDTH / 430;
-
+const createTwoButtonAlert = () =>
+    Alert.alert(
+      "Info",
+      "Module Dalam Penembangan",
+      [
+        { text: "OK", onPress: () => console.log("OK pressed") }
+      ]
+    );
 export function normalize(size) {
   const newSize = size * scale 
   if (Platform.OS === 'android') {
@@ -86,7 +95,7 @@ marginRight:10,
           <EvilIcons name="user" size={45} color="#adacac" />
             <Text style={{fontFamily:'Poppins-SemiBold',fontSize:normalize(16),marginStart:10,alignSelf:'flex-start',alignSelf:'center'}}>Hi, </Text>
             <Text style={{fontFamily:'Poppins-SemiBold',fontSize:normalize(16),textDecorationLine:'underline',textDecorationColor:'#000',alignSelf:'center'}}>Arief Muhammad</Text>
-            <MaterialIcons name="notifications-none" size={30} color="#adacac" style={{alignSelf:'flex-start',position:'absolute',right:0}}/>
+            <MaterialIcons name="notifications-none" size={30} color="#adacac" style={{alignSelf:'flex-start',position:'absolute',right:0,top:0,bottom:0}}/>
           </View>
         <View style={styles.vall}>
           <View style={styles.vhal}>
@@ -100,7 +109,7 @@ marginRight:10,
           <View style={styles.vhal2}>
           <Image source={IconArw} style={{margin:10,width:20,height:20}}></Image>
           <Text style={styles.text2}>Check-In-Preference</Text>
-          <TouchableOpacity onPress={onPress} style={{position:'absolute',right:0}}>
+          <TouchableOpacity onPress={createTwoButtonAlert} style={{position:'absolute',right:0,top:0,bottom:0}}>
           <CekButton/>
           </TouchableOpacity>
           </View>
@@ -204,8 +213,8 @@ const styles = StyleSheet.create({
     
     margin:15,
     marginStart:25,
-    position:'absolute'
-    
+    position:'absolute',
+    left:0,top:0,bottom:0
   },
   Img:{
     justifyContent:'center',
@@ -219,14 +228,14 @@ const styles = StyleSheet.create({
     margin:15,
    
     alignSelf:'center',
-   position:'absolute'
-   ,alignContent:'stretch'
+   
+   alignContent:'stretch'
   },
   btsy2:{
     marginEnd:25,
     margin:15,
     position:'absolute',
-    right:0
+    right:0,top:0,bottom:0
   },
   container:{
       flex: 1,
@@ -334,6 +343,7 @@ const styles = StyleSheet.create({
       position:'absolute',
       right:0,
       bottom:0,
+      top:1.5,
       height: 80,
       width: 90,
       resizeMode:'stretch'

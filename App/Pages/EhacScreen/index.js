@@ -78,7 +78,7 @@ return(
             </View>
             <View style={styles.TexCon1}>
             <Text style={styles.TexHead}>My e-HAC</Text>
-            <Text style={styles.Texdet}>Check ypur history eHAC{"\n"}here</Text>
+            <Text style={styles.Texdet}>Check your history eHAC{"\n"}here</Text>
             </View>
         </View>
         </View> 

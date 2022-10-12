@@ -7,7 +7,7 @@ import {
     TextInput , 
     StatusBar, 
     Image,
-    TouchableOpacity
+    TouchableOpacity,Dimensions, Platform, PixelRatio
 } from 'react-native';
 import {
     IconKemen,
@@ -21,7 +21,24 @@ import {
 import {
     PrimaryButton
 } from '../../Componets'
-
+import { AntDesign } from '@expo/vector-icons'; 
+import { Feather } from '@expo/vector-icons';
+const {
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
+  } = Dimensions.get('window');
+  
+  // based on iphone 5s's scale
+  const scale = SCREEN_WIDTH / 430;
+  
+  export function normalize(size) {
+    const newSize = size * scale 
+    if (Platform.OS === 'android') {
+      return Math.round(PixelRatio.roundToNearestPixel(newSize))
+    } else {
+      return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+    }
+  }
 
 export default LoginScreen =  ({navigation}) => {
 
@@ -36,14 +53,14 @@ export default LoginScreen =  ({navigation}) => {
                 <Image source={IconTop}></Image>
                 </View>
                 <View style={styles.sectionStyle}>
-                <Image source={IconMail}style={styles.imageStyle}/>
+                <AntDesign name="mail" size={24} color="#adacac"  style={styles.imageStyle}/>
                 <TextInput 
                     style={{flex: 1}}
                     placeholder="youremail@domain.com" underlineColorAndroid="transparent"
                 />
                 </View>
                 <View style={styles.sectionStyle}>
-                <Image source={IconLock}style={styles.imageStyle}/>
+                <Feather name="lock" size={24} color="#adacac"  style={styles.imageStyle} />
                 <TextInput  style={{flex: 1}}  placeholder="Password" underlineColorAndroid="transparent"/>
 
                 </View>
@@ -71,6 +88,7 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         padding:15,
+        
         alignContent:'center',
         backgroundColor:"#FFFFFF"
     },
@@ -90,10 +108,10 @@ const styles = StyleSheet.create({
     viewbt:{
         justifyContent:'flex-start',
         alignItems:'flex-start',
-        marginTop:100,
+        marginTop:normalize(100),
         alignSelf:'center',
         
-        marginBottom:10
+        marginBottom:15
     },
     BodyText:{
         marginTop:10,
@@ -144,10 +162,7 @@ const styles = StyleSheet.create({
         margin: 10,
       },
       imageStyle: {
-        padding: 10,
-        margin: 10,
-        height: 25,
-        width: 25,
+        margin:10,
         resizeMode: 'stretch',
         alignItems: 'center',
       },
