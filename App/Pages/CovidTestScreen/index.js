@@ -4,25 +4,12 @@ import {
     Text, 
     SafeAreaView, 
     StyleSheet,
-    TextInput , 
-    StatusBar, 
+    
     Image,
     TouchableOpacity,Dimensions, Platform, PixelRatio
 } from 'react-native';
 import {
-    IconKemen,
-    IconKomin,
-    IconKpcpen,
-    IconBumn,
-    IconTop,
-    IconMail,
-    IconLock,
-    IconCov,
-    IconCek,
-    IconChi,
-    IconBg,
-    IconCre,
-    IconMy,
+    
     IconEm
 } from '../../assets';
 import {

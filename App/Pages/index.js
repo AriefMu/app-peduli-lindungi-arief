@@ -4,9 +4,7 @@ import LoginScreen from './LoginScreen';
 import ImmunizationScreen from './ImmunizationScreen';
 import EhacScreen from './EhacScreen';
 import CovidTestScreen from './CovidTestScreen';
-// import RegisterScreen from './RegisterScreen';
-// import RegisterSuccessScreen from './RegisterScreen/RegisterSuccessScreen'
-// import RegisterErrorScreen from './RegisterScreen/RegisterErrorScreen'
+
 
 export {
     HomeScreen, 
@@ -15,7 +13,5 @@ export {
     ImmunizationScreen,
     EhacScreen,
     CovidTestScreen
-    // RegisterScreen,
-    // RegisterSuccessScreen,
-    // RegisterErrorScreen
+    
 };

@@ -11,9 +11,6 @@ import Modal from "react-native-modal";
   import {
     Iconhqr,
     IconArw,
-    IconSc,
-    IconNoti,
-    IconUser,
     IconTrav,
     IconEhc,
     IconFac,
@@ -133,7 +130,7 @@ marginRight:10,
           
           </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={onPress}>
+          <TouchableOpacity onPress={createTwoButtonAlert}>
           <View style={{alignItems:'center',marginTop:30}}>
           <View style={[styles.Img,{backgroundColor:'#1E9E61'}]}>
           <Image source={IconTrav} style={{width:normalize(64),height:normalize(72),resizeMode:'stretch',borderRadius:15}}></Image>
@@ -142,7 +139,7 @@ marginRight:10,
           <Text style={styles.textk}>Regulations</Text>
           </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={onPress}>
+          <TouchableOpacity onPress={createTwoButtonAlert}>
           <View style={{alignItems:'center',marginTop:30}}>
           <View style={[styles.Img,{backgroundColor:'#D7574C'}]}>  
           <Image source={IconStac} style={{width:normalize(65),height:normalize(66),resizeMode:'stretch',borderRadius:15}}></Image>
@@ -162,7 +159,7 @@ marginRight:10,
           <Text style={styles.textk}>Result</Text>
           </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={onPress}>
+          <TouchableOpacity onPress={createTwoButtonAlert}>
           <View style={{alignItems:'center',marginTop:30}}>
           <View style={[styles.Img,{backgroundColor:'#FFC557'}]}>  
           <Image source={IconTele} style={{width:normalize(62),height:normalize(62),resizeMode:'stretch',borderRadius:15}}></Image>
@@ -170,7 +167,7 @@ marginRight:10,
           <Text style={styles.textk}>Telemedicine</Text>
           </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={onPress}>
+          <TouchableOpacity onPress={createTwoButtonAlert}>
           <View style={{alignItems:'center',marginTop:50}}>
           <View style={[styles.Img,{backgroundColor:'#FFC557'}]}>  
           <Image source={IconHos} style={{width:normalize(69),height:normalize(69),resizeMode:'stretch',borderRadius:15}}></Image>
@@ -190,7 +187,7 @@ marginRight:10,
           <Text style={styles.textk}>EHAC</Text>
           </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={onPress}>
+          <TouchableOpacity onPress={createTwoButtonAlert}>
           <View style={{alignItems:'center',marginTop:50}}>
           <View style={[styles.Img,{backgroundColor:'#1E9E61'}]}>  
           <Image source={IconFac} style={{width:normalize(68),height:(68),resizeMode:'stretch',borderRadius:15}}></Image>

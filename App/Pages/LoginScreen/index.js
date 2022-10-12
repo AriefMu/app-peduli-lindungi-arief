@@ -15,8 +15,6 @@ import {
     IconKpcpen,
     IconBumn,
     IconTop,
-    IconMail,
-    IconLock
 } from '../../assets';
 import {
     PrimaryButton
